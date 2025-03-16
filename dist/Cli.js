@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const commander_1 = require("commander");
 const broadcastServer_1 = require("./broadcastServer");
-const client_1 = require("./client");
+const Client_1 = require("./Client");
 const DEFAULT_PORT = 7000;
 const DEFAULT_URL = `ws://localhost:${DEFAULT_PORT}`;
 const program = new commander_1.Command();
@@ -20,9 +20,9 @@ program
 });
 program
     .command('connect')
-    .description('Connect to the broadcast serer')
+    .description('Connect to the broadcast server for other users')
     .option('-u, --url <string>', 'server URL to connect to', DEFAULT_URL)
     .action((option) => {
-    new client_1.BroadCastClient(option.url);
+    new Client_1.BroadCastClient(option.url);
 });
 program.parse();

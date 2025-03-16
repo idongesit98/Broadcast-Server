@@ -1,6 +1,6 @@
 import { Command } from "commander";
 import { BroadcastServer } from "./broadcastServer";
-import { BroadCastClient } from "./client";
+import { BroadCastClient } from "./Client";
 
 const DEFAULT_PORT = 7000;
 const DEFAULT_URL = `ws://localhost:${DEFAULT_PORT}`;
@@ -22,7 +22,7 @@ program
 
 program
     .command('connect')
-    .description('Connect to the broadcast serer')
+    .description('Connect to the broadcast server for other users')
 
     .option('-u, --url <string>', 'server URL to connect to', DEFAULT_URL)
     .action((option) => {
